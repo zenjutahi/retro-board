@@ -10,5 +10,5 @@ public interface CommentJpaRepository extends JpaRepository<Comment, Long> {
     @Query("SELECT c FROM Comment c WHERE year(c.createdDate) = ?1 AND\n" +
             "month(c.createdDate) = ?2 AND\n" +
             "day(c.createdDate) = ?3")
-    List<Comment> findByCreatedYearAndMonth(int year, int month, int day);
+    List<Comment> findByCreatedYearAndMonthAndDay(int year, int month, int day);
 }
