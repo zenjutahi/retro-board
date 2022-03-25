@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 
-@Service("userDetailsService")
+@Service
 @Transactional(readOnly = true)
 public class UserService {
 
