@@ -3,9 +3,9 @@
 <head>
     <title>Retro Board</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="webjars/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <meta http-equiv="refresh" content="30; URL=/">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+    <meta http-equiv="refresh" content="60; URL=/">
 </head>
 <body>
 <div class="container">
@@ -28,7 +28,7 @@
     <form action="/comment" method="POST">
         <div class="row form-row">
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-            <div class="col-md-4"><i class="fa fa-plus"></i> Pluses
+            <div class="col-md-4"><i class="fa-solid fa-plus"></i> Pluses
                 <hr/>
                 <div id="pluses" th:each="plus : ${plusComments}">
                     <div class="alert alert-info" role="alert">
@@ -38,7 +38,7 @@
                 </div>
                 <textarea id="plusComment" name="plusComment" class="form-control" style="min-width: 100%"></textarea>
             </div>
-            <div class="col-md-4"><i class="fa fa-exclamation-triangle"></i> Deltas
+            <div class="col-md-4"><i class="fa-solid fa-exclamation-triangle"></i> Deltas
                 <hr/>
                 <div id="deltas" th:each="delta : ${deltaComments}">
                     <div class="alert alert-warning" role="alert">
@@ -48,7 +48,7 @@
                 </div>
                 <textarea id="deltaComment" name="deltaComment" class="form-control" style="min-width: 100%"></textarea>
             </div>
-            <div class="col-md-4"><i class="fa fa-asterisk"></i> Stars
+            <div class="col-md-4"><i class="fa-solid fa-star"></i> Stars
                 <hr/>
                 <div id="stars" th:each="star : ${starComments}">
                     <div class="alert alert-success" role="alert">
@@ -67,7 +67,7 @@
     </form>
     <footer class="fixed-bottom" style="position: fixed; bottom: 0">
         <div class="container">
-            <span class="text-muted">Retro Board by Shazin Sadakath.</span>
+            <span class="text-muted">Retro Board by Zenjy Njogu.</span>
         </div>
     </footer>
 </div>
